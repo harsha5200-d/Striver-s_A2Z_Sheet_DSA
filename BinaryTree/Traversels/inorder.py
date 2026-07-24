@@ -1,5 +1,4 @@
 class Tree:
-
     def __init__(self,data):
 
         self.left = None
@@ -8,7 +7,6 @@ class Tree:
 
 
 def BuildTree(arr,i):
-
     if (i>=len(arr) or arr[i]==-1):
         return None
 
@@ -18,14 +16,12 @@ def BuildTree(arr,i):
     root.right = BuildTree(arr,i*2+2)
 
     return root
-
 def inorder(root):
 
     if not root:
         return []
 
     return inorder(root.left) + [root.data] + inorder(root.right)
-
 
 arr = [1, 2, 3, 4, 5, 6, 7]
 root = BuildTree(arr,0)
