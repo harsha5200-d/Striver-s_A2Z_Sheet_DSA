@@ -9,8 +9,8 @@ class Tree:
 
 def buildTree(arr,i):
 
-    if(len(arr)<=i):
-        return 
+    if(len(arr)<=i or arr[i]==-1):
+        return None
     
 
     root = Tree(arr[i])
@@ -28,7 +28,6 @@ def postorder(root):
     postorder(root.left)
     postorder(root.right)
     print(root.data,end=" ")
-
 
 
 arr = [1, 2, 3, 4, 5, 6, 7]
