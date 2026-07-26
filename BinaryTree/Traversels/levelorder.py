@@ -32,7 +32,8 @@ def levelorder(root):
     while dq:
         node = dq.popleft()      # Remove from front
         result.append(node.data)
-
+        
+#
         if node.left:
             dq.append(node.left)
 
