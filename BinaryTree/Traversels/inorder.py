@@ -1,10 +1,11 @@
 class Tree:
+
     def __init__(self,data):
 
         self.left = None
         self.data = data
         self.right = None
-
+ 
 
 def BuildTree(arr,i):
     if (i>=len(arr) or arr[i]==-1):
