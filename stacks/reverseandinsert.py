@@ -10,6 +10,7 @@ def insert_bottom(stack, x):
 
 
 def reverse_stack(stack):
+
     if len(stack) == 0:
         return
 
