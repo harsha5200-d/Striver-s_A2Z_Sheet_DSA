@@ -1,3 +1,5 @@
+from collections import deque
+
 class Tree:
 
     def __init__(self, data):
@@ -26,9 +28,30 @@ def maxdepth(root):
     else:
         return 1 + max(maxdepth(root.left),maxdepth(root.right))
 
+def bydequemethod(root):
+
+    dq = deque([root])
+    res = []
+    
+    while dq:
+        subpart = []
+        for i in range(len(dq)):
+
+            node = dq.popleft()
+            subpart.append(node.data)
+
+            if node.left:
+                dq.append(node.left)
+            if node.right:
+                dq.append(node.right)
+
+        res.append(subpart)
+
+    return len(res)
 
 arr = [3, 9, 20, -1, -1, 15, 7]
 root = buildTree(arr,0)
-
+res1 = bydequemethod(root)
 res = maxdepth(root)
 print(res)
+print(res1)
