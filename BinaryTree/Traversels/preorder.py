@@ -15,10 +15,11 @@ def BuildTree(arr,i):
     return root
 
 def preorder(root):
-
+    # Base case: if node is null, return empty list
     if not root:
         return []
     
+    # Preorder traversal logic: Root -> Left -> Right
     return [root.data] + preorder(root.left)  + preorder(root.right)
 
 arr = [1 ,2, 4, 5, 3, 6, 7]
