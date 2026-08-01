@@ -21,18 +21,22 @@ def BuildTree(arr,i):
     return root
 
 def LevelPreOrder(root):
-
-
+    # Initialize deque with root node for preorder traversal using stack approach
     dq = deque([root])
     res = []
+    
+    # Process nodes iteratively
     while dq:
-
+        # Pop from the right end of deque (acting as stack top)
         node = dq.pop()
+        # Visit the node
         res.append(node.data)
 
+        # Push right child first so left child is processed first
         if node.right:
             dq.append(node.right)
 
+        # Push left child
         if node.left:
             dq.append(node.left)
 
