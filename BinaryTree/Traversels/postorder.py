@@ -21,13 +21,14 @@ def buildTree(arr,i):
     return root
 
 def postorder(root):
-
+    # Base case: if node is null, stop recursion
     if not root:
         return None
 
-    postorder(root.left)
-    postorder(root.right)
-    print(root.data,end=" ")
+    # Postorder traversal logic: Left -> Right -> Root
+    postorder(root.left)   # Recursively visit left subtree
+    postorder(root.right)  # Recursively visit right subtree
+    print(root.data,end=" ") # Visit the root node
 
 
 arr = [1, 2, 3, 4, 5, 6, 7]
