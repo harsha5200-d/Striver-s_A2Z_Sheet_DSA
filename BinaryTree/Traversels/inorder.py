@@ -18,10 +18,11 @@ def BuildTree(arr,i):
 
     return root
 def inorder(root):
-
+    # Base case: if node is null, return empty list
     if not root:
         return []
 
+    # Inorder traversal logic: Left -> Root -> Right
     return inorder(root.left) + [root.data] + inorder(root.right)
 
 arr = [1, 2, 3, 4, 5, 6, 7]
