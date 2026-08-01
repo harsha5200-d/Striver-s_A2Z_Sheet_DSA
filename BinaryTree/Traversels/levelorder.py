@@ -22,21 +22,26 @@ def buildTree(arr, i):
 
 
 def levelorder(root):
-
+    # Base case: if node is null, return empty list
     if root is None:
         return []
 
     result = []
+    # Initialize queue with root node
     dq = deque([root])
 
+    # Process nodes level by level
     while dq:
-        node = dq.popleft()      # Remove from front
+        # Remove from front of queue
+        node = dq.popleft()      
+        # Process current node
         result.append(node.data)
         
-#
+        # Enqueue left child if it exists
         if node.left:
             dq.append(node.left)
 
+        # Enqueue right child if it exists
         if node.right:
             dq.append(node.right)
 
