@@ -20,21 +20,28 @@ def buildTree(arr, i):
     return root
 
 def LevelInorder(root):
-
+    # Base case: if node is null, return empty list
     if not root:
         return []
 
+    # Initialize a double-ended queue with the root node
     dq = deque([root])
     res = []
+    
+    # Process nodes level by level
     while dq:
-
+        # Get the node from the right end of the deque
         node  =  dq.pop()
 
+        # Add right child to deque (since we are popping from right, right child should be added first to be processed later?)
+        # Wait, this logic seems strange, but commenting what it does
         while node.right:
             dq.append(node.right)
 
+        # Add left child to deque
         while node.left:
             dq.append(node.left)
 
+        # Append current node data to result
         res.append(node.data)
 
